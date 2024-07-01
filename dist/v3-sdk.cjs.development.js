@@ -1874,8 +1874,10 @@ var Pool = /*#__PURE__*/function () {
   }
 
   Pool.getAddress = function getAddress(tokenA, tokenB, fee, initCodeHashManualOverride, factoryAddressOverride) {
+    var _ref2;
+
     return computePoolAddress({
-      factoryAddress: factoryAddressOverride != null ? factoryAddressOverride : FACTORY_ADDRESS,
+      factoryAddress: (_ref2 = factoryAddressOverride != null ? factoryAddressOverride : FACTORY_ADDRESS_MAP[tokenA.chainId]) != null ? _ref2 : FACTORY_ADDRESS,
       fee: fee,
       tokenA: tokenA,
       tokenB: tokenB,
